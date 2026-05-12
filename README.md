@@ -18,20 +18,20 @@ Ou on peut tous pratiquer un sujet différent dans notre coin pour un objectif c
 Comme il n’y a pas de namespace dans Godot, je propose d’annoter les scripts ainsi :
 
 Par ordre de feuille de présence :
-E0: Fait en groupe au tableau
-E1: Bunyamin
-E2: Jean-Charles
-E3: Nicolas
-E4: Florentin
-E5: Gaetan
-E6: Jurgen
-E7: Richard
-E8: Emile
-E9: Daniele
-E10: Laurent
-E11: Cedric
-E12: Thomas
-E13: Eloi
+- E0: Fait en groupe au tableau
+- E1: Bunyamin
+- E2: Jean-Charles
+- E3: Nicolas
+- E4: Florentin
+- E5: Gaetan
+- E6: Jurgen
+- E7: Richard
+- E8: Emile
+- E9: Daniele
+- E10: Laurent
+- E11: Cedric
+- E12: Thomas
+- E13: Eloi
 
 Par exemple :
 
@@ -54,6 +54,24 @@ static func print_text_6x8_at_lrtd_without_background(array:Array[bool], top_lef
 
 *On n’aura jamais le temps et beaucoup sont trop difficiles ou pas utiles à la formation.*
 *Réfléchissez à un debug log que vous voudriez voir en VR.*
+
+N’oubliez pas que la suite de l’exercice est de refaire le KS4036 en XR :
+* Debug des manettes du Quest ?
+* Debug des manettes de la NES ?
+* Debug du gamepad ?
+* Debug des touches du clavier pressées ?
+* Debug des deux Line Renderers ?
+* Debug de la vitesse des roues ?
+* Debug de sa position et de sa rotation ?
+* Debug de la distance de l’obstacle ?
+* Debug des couleurs affichées ?
+* Debug de l'intensitee de lumiere ?
+* Debug de IPV4 du casque ?
+* Debug la batterie du Quest ?
+* Debug d'un angle entre deux points ?
+* Debug des bytes envoyers sur un jeu en reseaux ?
+* ...
+
 
 
 ## Inspiration

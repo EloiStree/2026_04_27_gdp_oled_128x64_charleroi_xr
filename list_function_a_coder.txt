@@ -1,0 +1,525 @@
+## THIS CLASS IS DESIGN TO TRAIN ON GDSCRIPT
+# ## REPLACE ALL "not_implemented()" WITH YOUR OWN IMPLEMENTATION
+
+# ## MORE YOU CODE THEM
+# ## MORE YOU HAVE TOOLBOX TO MAKE GAME ON THE DISPLAY
+# ## MORE YOU HAVE TOOLBOX TO DEBUG IN VIRTUAL REALITY
+
+# class_name ScreenBuilder128x64
+# extends Node
+
+# const SCREEN_WIDTH: int = 128
+# const SCREEN_HEIGHT: int = 64
+# const SCREEN_SIZE: int = 8192
+
+# enum UpDownDirection{
+# 	LRTD,
+# 	LRDT
+# }
+
+# var screen:Array[bool] = []
+# var direction: UpDownDirection = UpDownDirection.LRDT
+
+
+
+# func convert_lrdt_to_lrtd_vectori(vector_lrdt: Vector2i) -> Vector2i:
+# 	return Vector2(0,0)
+# func convert_lrtd_to_lrdt_vectori(vector_lrtd: Vector2i) -> Vector2i:
+# 	return Vector2(0,0)
+
+
+
+# #region NOT IMPLEMENTED METHOD
+# const NOT_IMPLEMENTED_ERROR_MESSAGE:String = "This method is not implemented yet."
+#   func not_implemented():
+# 	push_error(NOT_IMPLEMENTED_ERROR_MESSAGE)
+# #endregion
+
+
+# #region INDEX CONVERSION
+#   func index_to_xy_lrtd(index_1d_0_8192: int) -> Vector2i:
+# 	not_implemented()
+# 	return Vector2i(0,0)
+
+#   func index_to_xy_lrdt(index_1d_0_8192: int) -> Vector2i:
+# 	not_implemented()
+# 	return Vector2i(0,0)
+
+#   func xy_lrtd_to_index(x_left_right: int, y_top_down: int) -> int:
+# 	not_implemented()
+# 	return 0
+
+#   func xy_lrdt_to_index(x_left_right: int, y_down_top: int) -> int:
+# 	not_implemented()
+# 	return 0
+
+
+#   func vectori_xy_lrtd_to_index(vec: Vector2i) -> int:
+# 	not_implemented()
+# 	return xy_lrtd_to_index(vec.x, vec.y)
+
+#   func vectori_xy_lrdt_to_index(vec: Vector2i) -> int:
+# 	not_implemented()
+# 	return xy_lrdt_to_index(vec.x, vec.y)
+
+# #endregion
+
+
+
+# #region EASY CODED
+
+#   func inverse_all_boolean_value():
+# 	pass
+
+#   func inverse_boolean_horizontally():
+# 	pass
+
+
+#   func inverse_boolean_vertically():
+# 	pass
+
+
+#   func set_boolean_array_to_true():
+# 	pass
+
+
+#   func set_boolean_array_to_false():
+# 	pass
+
+#   func draw_full_line_top_down(,line_index_0_63: int, is_on: bool = true):
+# 	pass
+
+#   func draw_full_column_left_right(,column_index_0_127: int, is_on: bool = true):
+# 	pass
+
+# #endregion
+
+
+
+
+
+
+# #region COMPARE
+
+
+# static func get_changed_boolean(previous:Array[bool], current:Array[bool]) -> Array[bool]:
+# 	return []
+
+# static func get_unchanged_boolean(previous:Array[bool], current:Array[bool]) -> Array[bool]:
+# 	return []
+
+
+# static func get_same_pixel_count(array_a:Array[bool], array_b:Array[bool]) -> int:
+# 	return 0
+
+# static func get_similarity_percent(array_a:Array[bool], array_b:Array[bool]) -> float:
+# 	return 0.0
+
+# static func compare_are_array_equals(array_a:Array[bool], array_b:Array[bool]) -> bool:
+# 	return false
+
+
+# static func binary_and_array(array_a:Array[bool], array_b:Array[bool]) -> Array[bool]:
+# 	return []
+
+
+# static func binary_or_array(array_a:Array[bool], array_b:Array[bool]) -> Array[bool]:
+# 	return []
+
+# static func binary_xor_array(array_a:Array[bool], array_b:Array[bool]) -> Array[bool]:
+# 	return []
+
+# static func binary_not_array(array_a:Array[bool]) -> Array[bool]:
+# 	return []
+
+# static func binary_nand_array(array_a:Array[bool], array_b:Array[bool]) -> Array[bool]:
+# 	return []
+
+# static func binary_nor_array(array_a:Array[bool], array_b:Array[bool]) -> Array[bool]:
+# 	return []
+
+# static func binary_xnor_array(array_a:Array[bool], array_b:Array[bool]) -> Array[bool]:
+# 	return []
+
+
+# #endregion
+
+
+
+# #region BASIC SHOULD NOT BE CHANGED
+
+
+#   func set_value_at_index_1d(, index_0_8191:int, is_on:bool):
+# 	pass
+
+#   func get_value_at_index_1d(, index_0_8191:int)->bool:
+# 	return false
+
+
+#   func set_value_with_1d_array():
+
+#   func get_value_as_1d_array_reference()->Array[bool]:
+
+#   func get_value_as_1d_array_copy()->Array[bool]:
+
+
+#   func set_value_at_x_y_lrtd(x_left_right:int,y_top_down:int, is_on:bool):
+
+#   func set_value_at_x_y_lrdt(x_left_right:int,y_down_top:int, is_on:bool):
+
+#   func get_value_at_x_y_lrtd(x_left_right:int,y_top_down:int)->bool:
+	
+
+#   func get_value_at_x_y_lrdt(x_left_right:int,y_down_top:int)->bool:
+
+# #endregion
+
+
+
+
+
+
+
+
+
+# #region GETTERS
+#   func get_top_left_corner_index_2d_lrtd() -> Vector2i:
+#   func get_top_right_corner_index_2d_lrtd() -> Vector2i:
+#   func get_bottom_left_corner_index_2d_lrtd() -> Vector2i:
+#   func get_bottom_right_corner_index_2d_lrtd() -> Vector2i:	
+#   func get_top_left_corner_index_1d() -> int:
+#   func get_top_right_corner_index_1d() -> int:
+#   func get_bottom_left_corner_index_1d() -> int:
+#   func get_bottom_right_corner_index_1d() -> int:
+# #endregion
+
+
+#   func set_boolean_to_random_at_1d(index: int):
+#   func set_all_to_random():
+
+#   func toggle_1d_value(index: int):
+#   func toggle_2d_lrdt_value(x: int, y: int):
+#   func toggle_2d_lrtd_value(x: int, y: int):
+#   func toggle_all():
+
+#   func set_boolean_left_of(x: int, y: int, is_on: bool, step:int=128):
+#   func set_boolean_right_of(x: int, y: int, is_on: bool, step:int=128):
+
+#   func set_boolean_up_of(x: int, y: int, is_on: bool, step:int=128):
+#   func set_boolean_down_of(x: int, y: int, is_on: bool, step:int=128):
+	
+
+# #region BIT OPERATIONS
+
+#   func draw_nxn_grid(start_x: int, start_y: int, square_size: int):
+
+#   func draw_1x1_grid(is_on: bool = true):
+
+#   func draw_2x2_grid(is_on: bool = true):
+
+#   func draw_3x3_grid(is_on: bool = true):
+
+#   func draw_4x4_grid(is_on: bool = true):
+
+#   func draw_8x8_grid(is_on: bool = true):
+
+#   func draw_16x16_grid(is_on: bool = true):
+
+#   func draw_32x32_grid(is_on: bool = true):
+
+
+#   func draw_chressboard_full_screen():
+
+#   func draw_chressboard_centered():
+
+#   func draw_fill_rectangle_lrtd(x_left_right: int, y_top_down: int, width: int, height: int, is_on: bool = true):
+
+
+#   func draw_line_up_from_lrdt(x_left_right: int, y_down_top: int, pixel: int, is_on: bool = true):
+#   func draw_line_up_from_lrtd(x_left_right: int, y_top_down: int, pixel: int, is_on: bool = true):
+	
+#   func draw_line_right_from_lrdt(x_left_right: int, y_down_top: int, pixel: int, is_on: bool = true):
+#   func draw_line_right_from_lrtd(x_left_right: int, y_top_down: int, pixel: int, is_on: bool = true):
+
+#   func draw_line_down_from_lrdt(x_left_right: int, y_down_top: int, pixel: int, is_on: bool = true):
+#   func draw_line_down_from_lrtd(x_left_right: int, y_top_down: int, pixel: int, is_on: bool = true):
+
+#   func draw_line_left_from_lrdt(x_left_right: int, y_down_top: int, pixel: int, is_on: bool = true):
+#   func draw_line_left_from_lrtd(x_left_right: int, y_top_down: int, pixel: int, is_on: bool = true):
+
+
+
+
+
+#   func draw_screen_border(pixel_count: int, is_on: bool = true):
+
+
+
+
+# ## USED TO DRAGE PAGES IN THE REAL DISPLAY
+#   func draw_byte_line_down_lrtd(x_left_right: int, y_top_down: int, byte_as_int: int):
+
+# ## SET SSD1306 PAGE THAT ARE ARRAY OF BYTES OF 128 PIXELS IN WIDTH AND 8 PIXELS IN HEIGHT
+#   func draw_page(page_index_0_7:int, bytes_0_127: PackedByteArray): 
+
+# ## IMPORT BYTE AS PAGE FORMATTED AS SSD1306
+#   func draw_pages_with_one_packed_byte_array(bytes_0_1023: PackedByteArray):
+
+
+#   func draw_bool_image_from_1d_array_lrtd(x_left_right: int, y_down_top: int, width: int, boolean_array: Array[bool], inverse: bool = false):
+#   func replace_slash_per_line_return(text:String)->String:
+#   func keep_only_01(text:String)->String:
+#   func draw_from_text_image_lrtd_at_zero(text:String):	
+#   func draw_from_text_image_lrtd_at_zero_inversed(text:String):
+#   func draw_bool_image_from_1d_array_lrtd_at_zero(width: int, boolean_array: Array[bool]):
+#   func draw_bool_image_from_1d_array_lrtd_at_zero_inversed(width: int, boolean_array: Array[bool]):
+
+
+
+
+
+#   func print_text_at_zero(text:String):
+# 	draw_bool_line_characters_6x8_lrtd(0, 0, text, true)
+
+#   func print_text_at_zero_inversed(text:String):
+# 	draw_bool_line_characters_6x8_lrtd(0, 0, text, false)
+
+#   func print_text_at_lrtd(x_left_right: int, y_down_top: int, text:String, is_on: bool = true):
+# 	draw_bool_line_characters_6x8_lrtd(x_left_right, y_down_top,text, is_on)
+	
+#   func draw_bool_character_6x8_lrtd(x_left_right: int, y_down_top: int, chars: String, is_on: bool = true, use_background: bool = false):
+# 	var image :String=get_text_image_of_font_character(chars)
+# 	draw_from_text_image_lrtd(x_left_right, y_down_top, image, is_on, use_background)
+
+#   func draw_text_in_6x8_format_lrtd(x_left_right: int, y_down_top: int, chars: String, is_on: bool = true,use_background: bool = false):
+
+
+
+
+
+#   func draw_border_rectangle_lrtd_from_to_vectori(start:Vector2i, end:Vector2i, is_on: bool = true):
+#   func draw_fill_rectangle_lrtd_from_to_vectori(start:Vector2i, end:Vector2i, is_on: bool = true):
+#   func draw_from_text_image_lrtd( x_left_right: int, y_down_top: int, text_image:String, is_on: bool = true, use_background =true	):
+#   func compare_bool_removed_values(,result:Array[bool])->int:
+#   func compare_bool_added_values(,result:Array[bool])->int:
+
+
+
+
+
+
+
+#   func move_from_to_lrdt_vectori(start_lrdt:Vector2i, end_lrdt:Vector2i, left_behind_is_on: bool = false):
+#   func switch_from_to_lrdt_vectori(start_lrdt:Vector2i, end_lrdt:Vector2i):
+
+
+
+
+
+# ## THIS ONE WOULD BE BETTER AS A BUILDER PATTERN
+# ## TO MUCH PARAMETER FOR A FUNCTION
+#   func draw_progress_bar_11_up(, direction:UpDownDirection, start:Vector2i, end:Vector2i, percent11:float, is_on: bool = true):
+#   func draw_progress_bar_11_right(, direction:UpDownDirection, start:Vector2i, end:Vector2i, percent11:float, is_on: bool = true):
+#   func draw_progress_bar_01_up(, direction:UpDownDirection, start:Vector2i, end:Vector2i, percent01:float, is_on: bool = true):
+#   func draw_progress_bar_01_right(, direction:UpDownDirection, start:Vector2i, end:Vector2i, percent01:float, is_on: bool = true):
+#   func draw_progress_bar_01_down(, direction:UpDownDirection, start:Vector2i, end:Vector2i, percent01:float, is_on: bool = true):
+#   func draw_progress_bar_01_left(, direction:UpDownDirection, start:Vector2i, end:Vector2i, percent01:float, is_on: bool = true):
+	
+
+	
+#   func draw_four_point_at_center_points(is_on: bool = true):
+
+
+#   func draw_border_square(,direction:UpDownDirection , x_left_right: int, y_top_down: int, square_width: int, is_on: bool = true):)
+#   func draw_fill_square(,direction:UpDownDirection,x_left_right: int, y_top_down: int, square_width: int, is_on: bool = true):
+
+#   func shift_2d_boolean_array_down(loop_border: bool = true):
+#   func shift_2d_boolean_array_left(loop_border: bool = true):
+#   func shift_2d_boolean_array_right(loop_border: bool = true):		
+#   func shift_2d_boolean_array_up(loop_border: bool = true):
+
+#   func shift_2d_boolean_array_up_right(loop_border: bool = true):
+#   func shift_2d_boolean_array_down_right(loop_border: bool = true):
+#   func shift_2d_boolean_array_down_left(loop_border: bool = true):		
+#   func shift_2d_boolean_array_up_left(loop_border: bool = true):
+
+
+
+
+
+# #region DRAWING
+
+
+
+#   func draw_border_circle_from_center(point: Vector2i, radius: int, is_on: bool = true, fill:bool=true):
+#   func draw_border_ellipse_in_rectangle(point: Vector2i, point:Vector2i, is_on: bool = true, fill:bool=true):
+
+#   func draw_fill_circle_from_center(point: Vector2i, radius: int, is_on: bool = true, fill:bool=true):
+#   func draw_fill_ellipse_in_rectangle(point: Vector2i, point:Vector2i, is_on: bool = true, fill:bool=true):
+
+
+#   func draw_line_from_to(start: Vector2i, end: Vector2i, is_on: bool = true):
+#   func draw_line_with_radius_from_to(start: Vector2i, end: Vector2i, is_on: bool = true, radius: int = 2):
+
+
+# #endregion
+
+#   func get_random_point_2d_lrdt() -> Vector2i:
+
+
+
+
+#   func draw_image_2d_lrtd(x_left_right: int, y_top_down: int, image: Image, threshold: float = 1.0):
+#   func draw_texture_2d_lrtd(x_left_right: int, y_top_down: int, texture: Texture2D, threshold: float = 1.0):
+#   func draw_image_texture_2d_lrtd(x_left_right: int, y_top_down: int, image_texture: ImageTexture, threshold: float = 1.0):
+#   func is_color_white_threshold(color:Color, threshold:float):
+#   func is_color_white(color: Color) -> bool:
+#   func is_color_transparent(color: Color, alpha_threshold: float) -> bool:
+#   func draw_bool_image_2d_center_at_point_lrtd(x_left_right: int, y_top_down: int, image: Image, threshold: float = 1.0):
+#   func draw_bool_image_2d_at_center(image: Image, threshold: float = 1.0):
+#   func draw_bool_image_2d_at_center_left(image: Image, threshold: float = 1.0):
+#   func draw_bool_image_2d_at_center_right(image: Image, threshold: float = 1.0):
+#   func draw_bool_ellipsis_in_rectangle_lrtd_from_to_vectori(v_start:Vector2i,v_end:Vector2i,is_on:bool):
+#   func draw_bool_ellipsis_border_in_rectangle_lrtd_from_to_vectori(v_start:Vector2i,v_end:Vector2i,is_on:bool):
+# 	push_error("Not implemented")
+# 	pass
+
+
+
+# #region BITMAP FONT TO TEXT IMAGE 
+#   func get_text_image_of_font_character(character: String) -> String:
+# 	if FONT_DICO_SSD1306_6X8.has(character):
+# 		var bytes: Array = FONT_DICO_SSD1306_6X8[character]
+# 		var packed_bytes: PackedByteArray = PackedByteArray(bytes)
+# 		return turn_6x8_bitmap_bytes_to_text_image(packed_bytes)
+# 	else:
+# 		return ""
+
+#   func turn_6x8_bitmap_bytes_to_text_image(bytes:PackedByteArray)->String:
+# 	var array_8x6:Array[String] = [
+# 		"0","0","0","0","0","0","|",
+# 		"0","0","0","0","0","0","|",
+# 		"0","0","0","0","0","0","|",
+# 		"0","0","0","0","0","0","|",
+# 		"0","0","0","0","0","0","|",
+# 		"0","0","0","0","0","0","|",
+# 		"0","0","0","0","0","0","|",
+# 		"0","0","0","0","0","0",
+# 		]
+
+# 	for x in range(6):
+# 		var byte_as_int: int = bytes[x]
+# 		for y in range(8):
+# 			var bit_is_on: bool = (byte_as_int & (1 << y)) != 0
+# 			array_8x6[y * 7 + x] = "1" if bit_is_on else "0"
+# 	var text_image: String = "".join(array_8x6)
+# 	return text_image
+
+#   func get_all_char_in_font_dico_6x8() -> Array[String]:
+# 	var characters: Array[String] = []
+# 	for character in FONT_DICO_SSD1306_6X8.keys():
+# 		characters.append(character)
+# 	return characters
+
+
+
+
+# var FONT_DICO_SSD1306_6X8 := {
+# 	' ': [0x00,0x00,0x00,0x00,0x00,0x00],
+# 	'!': [0x00,0x00,0x00,0x2f,0x00,0x00],
+# 	'"': [0x00,0x00,0x07,0x00,0x07,0x00],
+# 	'#': [0x00,0x14,0x7f,0x14,0x7f,0x14],
+# 	'$': [0x00,0x24,0x2a,0x7f,0x2a,0x12],
+# 	'%': [0x00,0x23,0x13,0x08,0x64,0x62],
+# 	'&': [0x00,0x36,0x49,0x55,0x22,0x50],
+# 	"'": [0x00,0x00,0x05,0x03,0x00,0x00],
+# 	'(': [0x00,0x00,0x1c,0x22,0x41,0x00],
+# 	')': [0x00,0x00,0x41,0x22,0x1c,0x00],
+# 	'*': [0x00,0x14,0x08,0x3E,0x08,0x14],
+# 	'+': [0x00,0x08,0x08,0x3E,0x08,0x08],
+# 	',': [0x00,0x00,0x00,0xA0,0x60,0x00],
+# 	'-': [0x00,0x08,0x08,0x08,0x08,0x08],
+# 	'.': [0x00,0x00,0x60,0x60,0x00,0x00],
+# 	'/': [0x00,0x20,0x10,0x08,0x04,0x02],
+# 	'0': [0x00,0x3E,0x51,0x49,0x45,0x3E],
+# 	'1': [0x00,0x00,0x42,0x7F,0x40,0x00],
+# 	'2': [0x00,0x42,0x61,0x51,0x49,0x46],
+# 	'3': [0x00,0x21,0x41,0x45,0x4B,0x31],
+# 	'4': [0x00,0x18,0x14,0x12,0x7F,0x10],
+# 	'5': [0x00,0x27,0x45,0x45,0x45,0x39],
+# 	'6': [0x00,0x3C,0x4A,0x49,0x49,0x30],
+# 	'7': [0x00,0x01,0x71,0x09,0x05,0x03],
+# 	'8': [0x00,0x36,0x49,0x49,0x49,0x36],
+# 	'9': [0x00,0x06,0x49,0x49,0x29,0x1E],
+# 	':': [0x00,0x00,0x36,0x36,0x00,0x00],
+# 	';': [0x00,0x00,0x56,0x36,0x00,0x00],
+# 	'<': [0x00,0x08,0x14,0x22,0x41,0x00],
+# 	'=': [0x00,0x14,0x14,0x14,0x14,0x14],
+# 	'>': [0x00,0x00,0x41,0x22,0x14,0x08],
+# 	'?': [0x00,0x02,0x01,0x51,0x09,0x06],
+# 	'@': [0x00,0x32,0x49,0x59,0x51,0x3E],
+# 	'A': [0x00,0x7C,0x12,0x11,0x12,0x7C],
+# 	'B': [0x00,0x7F,0x49,0x49,0x49,0x36],
+# 	'C': [0x00,0x3E,0x41,0x41,0x41,0x22],
+# 	'D': [0x00,0x7F,0x41,0x41,0x22,0x1C],
+# 	'E': [0x00,0x7F,0x49,0x49,0x49,0x41],
+# 	'F': [0x00,0x7F,0x09,0x09,0x09,0x01],
+# 	'G': [0x00,0x3E,0x41,0x49,0x49,0x7A],
+# 	'H': [0x00,0x7F,0x08,0x08,0x08,0x7F],
+# 	'I': [0x00,0x00,0x41,0x7F,0x41,0x00],
+# 	'J': [0x00,0x20,0x40,0x41,0x3F,0x01],
+# 	'K': [0x00,0x7F,0x08,0x14,0x22,0x41],
+# 	'L': [0x00,0x7F,0x40,0x40,0x40,0x40],
+# 	'M': [0x00,0x7F,0x02,0x0C,0x02,0x7F],
+# 	'N': [0x00,0x7F,0x04,0x08,0x10,0x7F],
+# 	'O': [0x00,0x3E,0x41,0x41,0x41,0x3E],
+# 	'P': [0x00,0x7F,0x09,0x09,0x09,0x06],
+# 	'Q': [0x00,0x3E,0x41,0x51,0x21,0x5E],
+# 	'R': [0x00,0x7F,0x09,0x19,0x29,0x46],
+# 	'S': [0x00,0x46,0x49,0x49,0x49,0x31],
+# 	'T': [0x00,0x01,0x01,0x7F,0x01,0x01],
+# 	'U': [0x00,0x3F,0x40,0x40,0x40,0x3F],
+# 	'V': [0x00,0x1F,0x20,0x40,0x20,0x1F],
+# 	'W': [0x00,0x3F,0x40,0x38,0x40,0x3F],
+# 	'X': [0x00,0x63,0x14,0x08,0x14,0x63],
+# 	'Y': [0x00,0x07,0x08,0x70,0x08,0x07],
+# 	'Z': [0x00,0x61,0x51,0x49,0x45,0x43],
+# 	'[': [0x00,0x00,0x7F,0x41,0x41,0x00],
+# 	'\\': [0x00,0x55,0x2A,0x55,0x2A,0x55],
+# 	']': [0x00,0x00,0x41,0x41,0x7F,0x00],
+# 	'^': [0x00,0x04,0x02,0x01,0x02,0x04],
+# 	'_': [0x00,0x40,0x40,0x40,0x40,0x40],
+# 	'`': [0x00,0x00,0x01,0x02,0x04,0x00],
+# 	'a': [0x00,0x20,0x54,0x54,0x54,0x78],
+# 	'b': [0x00,0x7F,0x48,0x44,0x44,0x38],
+# 	'c': [0x00,0x38,0x44,0x44,0x44,0x20],
+# 	'd': [0x00,0x38,0x44,0x44,0x48,0x7F],
+# 	'e': [0x00,0x38,0x54,0x54,0x54,0x18],
+# 	'f': [0x00,0x08,0x7E,0x09,0x01,0x02],
+# 	'g': [0x00,0x18,0xA4,0xA4,0xA4,0x7C],
+# 	'h': [0x00,0x7F,0x08,0x04,0x04,0x78],
+# 	'i': [0x00,0x00,0x44,0x7D,0x40,0x00],
+# 	'j': [0x00,0x40,0x80,0x84,0x7D,0x00],
+# 	'k': [0x00,0x7F,0x10,0x28,0x44,0x00],
+# 	'l': [0x00,0x00,0x41,0x7F,0x40,0x00],
+# 	'm': [0x00,0x7C,0x04,0x18,0x04,0x78],
+# 	'n': [0x00,0x7C,0x08,0x04,0x04,0x78],
+# 	'o': [0x00,0x38,0x44,0x44,0x44,0x38],
+# 	'p': [0x00,0xFC,0x24,0x24,0x24,0x18],
+# 	'q': [0x00,0x18,0x24,0x24,0x18,0xFC],
+# 	'r': [0x00,0x7C,0x08,0x04,0x04,0x08],
+# 	's': [0x00,0x48,0x54,0x54,0x54,0x20],
+# 	't': [0x00,0x04,0x3F,0x44,0x40,0x20],
+# 	'u': [0x00,0x3C,0x40,0x40,0x20,0x7C],
+# 	'v': [0x00,0x1C,0x20,0x40,0x20,0x1C],
+# 	'w': [0x00,0x3C,0x40,0x30,0x40,0x3C],
+# 	'x': [0x00,0x44,0x28,0x10,0x28,0x44],
+# 	'y': [0x00,0x1C,0xA0,0xA0,0xA0,0x7C],
+# 	'z': [0x00,0x44,0x64,0x54,0x4C,0x44],
+# 	'{': [0x00,0x00,0x08,0x77,0x00,0x00],
+# 	'|': [0x00,0x00,0x00,0x7F,0x00,0x00],
+# 	'}': [0x00,0x00,0x77,0x08,0x00,0x00],
+# 	'~': [0x00,0x10,0x08,0x10,0x08,0x00],
+# 	'DEL': [0x14,0x14,0x14,0x14,0x14,0x14]
+# }
+# #endregion
