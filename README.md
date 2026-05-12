@@ -18,20 +18,20 @@ Ou on peut tous pratiquer un sujet différent dans notre coin pour un objectif c
 Comme il n’y a pas de namespace dans Godot, je propose d’annoter les scripts ainsi :
 
 Par ordre de feuille de présence :
-E0: Fait en groupe au tableau
-E1: Bunyamin
-E2: Jean-Charles
-E3: Nicolas
-E4: Florentin
-E5: Gaetan
-E6: Jurgen
-E7: Richard
-E8: Emile
-E9: Daniele
-E10: Laurent
-E11: Cedric
-E12: Thomas
-E13: Eloi
+- E0: Fait en groupe au tableau
+- E1: Bunyamin
+- E2: Jean-Charles
+- E3: Nicolas
+- E4: Florentin
+- E5: Gaetan
+- E6: Jurgen
+- E7: Richard
+- E8: Emile
+- E9: Daniele
+- E10: Laurent
+- E11: Cedric
+- E12: Thomas
+- E13: Eloi
 
 Par exemple :
 
