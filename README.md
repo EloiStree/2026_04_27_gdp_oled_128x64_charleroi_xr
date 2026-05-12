@@ -66,6 +66,8 @@ N’oubliez pas que la suite de l’exercice est de refaire le KS4036 en XR :
 * Debug de la distance de l’obstacle ?
 * Debug des couleurs affichées ?
 * Debug de l'intensitee de lumiere ?
+* Debug de IPV4 du casque ?
+* Debug la batterie du Quest ?
 * ...
 
 
