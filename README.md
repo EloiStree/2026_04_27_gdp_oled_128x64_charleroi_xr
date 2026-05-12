@@ -55,6 +55,20 @@ static func print_text_6x8_at_lrtd_without_background(array:Array[bool], top_lef
 *On n’aura jamais le temps et beaucoup sont trop difficiles ou pas utiles à la formation.*
 *Réfléchissez à un debug log que vous voudriez voir en VR.*
 
+N’oubliez pas que la suite de l’exercice est de refaire le KS4036 en XR :
+* Debug des manettes du Quest ?
+* Debug des manettes de la NES ?
+* Debug du gamepad ?
+* Debug des touches du clavier pressées ?
+* Debug des deux Line Renderers ?
+* Debug de la vitesse des roues ?
+* Debug de sa position et de sa rotation ?
+* Debug de la distance de l’obstacle ?
+* Debug des couleurs affichées ?
+* Debug de l'intensitee de lumiere ?
+* ...
+
+
 
 ## Inspiration
 
