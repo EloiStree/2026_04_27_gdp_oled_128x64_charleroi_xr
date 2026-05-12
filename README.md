@@ -68,6 +68,8 @@ N’oubliez pas que la suite de l’exercice est de refaire le KS4036 en XR :
 * Debug de l'intensitee de lumiere ?
 * Debug de IPV4 du casque ?
 * Debug la batterie du Quest ?
+* Debug d'un angle entre deux points ?
+* Debug des bytes envoyers sur un jeu en reseaux ?
 * ...
 
 
