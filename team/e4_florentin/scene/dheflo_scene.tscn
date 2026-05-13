@@ -6,6 +6,8 @@
 [node name="DhefloScene" type="Node3D" unique_id=1408128478 node_paths=PackedStringArray("screen")]
 script = ExtResource("1_3ky8y")
 screen = NodePath("Display128x64Lite")
+col = 64
+line = 55
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1680620021]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
