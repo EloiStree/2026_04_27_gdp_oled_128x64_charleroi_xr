@@ -1,13 +1,15 @@
-class_name E1ScreenBuilderHelloWorld
+class_name E4ScreenBuilderHelloWorld
 extends Node
 
 @export var screen:SSD1306NodeFacadeLite
+@export var array:Array[bool]
+@export var col:int = 0
+@export var line:int = 0
 
-var array:Array[bool]
 func _ready() -> void:
 	array.resize(128*64)
-	var position:Vector2i = Vector2i(10,10)
-	E13ScreenBuilderPrint6x8.print_text_6x8_at_lrtd(array, position,"Hello World",true, true)
+	
+func _process(delta:float):
+	E4ScreenBuilderLineAndColumn.draw_column(array, col)
+	E4ScreenBuilderLineAndColumn.draw_line(array, line)
 	screen.set_value_with_1d_array_and_draw(array)
-func _process(delta: float) -> void:
-	pass

@@ -6,12 +6,92 @@
 [node name="DhefloScene" type="Node3D" unique_id=1408128478 node_paths=PackedStringArray("screen")]
 script = ExtResource("1_3ky8y")
 screen = NodePath("Display128x64Lite")
+col = 30
+line = 32
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1680620021]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=2026948494]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.05602157, 0.22781801, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0.05602157, 0.32879704, 0)
 
 [node name="Display128x64Lite" parent="." unique_id=1860853132 instance=ExtResource("1_5mwlq")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.06, 0, 0)
+
+[node name="LineContainer" type="Control" parent="." unique_id=886091980]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 72.0
+offset_bottom = 72.0
+
+[node name="Label" type="Label" parent="LineContainer" unique_id=997048205]
+layout_mode = 0
+offset_top = 20.0
+offset_right = 148.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 12
+text = "Line coordinate"
+
+[node name="LineEdit" type="LineEdit" parent="LineContainer" unique_id=527539749]
+layout_mode = 0
+offset_top = 43.0
+offset_right = 68.5
+offset_bottom = 74.0
+placeholder_text = "0"
+
+[node name="Button2" type="Button" parent="LineContainer" unique_id=1280754124]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 52.0
+offset_bottom = 109.0
+text = "Add line"
+
+[node name="ColumnContainer" type="Control" parent="." unique_id=1472685385]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 168.0
+offset_right = 72.0
+offset_bottom = 208.0
+
+[node name="Label" type="Label" parent="ColumnContainer" unique_id=269276908]
+layout_mode = 0
+offset_top = 21.0
+offset_right = 148.0
+offset_bottom = 44.0
+theme_override_font_sizes/font_size = 12
+text = "Column coordinate"
+
+[node name="LineEdit" type="LineEdit" parent="ColumnContainer" unique_id=1644232354]
+layout_mode = 0
+offset_top = 43.0
+offset_right = 68.5
+offset_bottom = 74.0
+placeholder_text = "0"
+
+[node name="Button2" type="Button" parent="ColumnContainer" unique_id=2091999866]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 52.0
+offset_bottom = 109.0
+text = "Add column "
+
+[node name="ClearButtonCo,ntainer" type="Control" parent="." unique_id=688969576]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 32.0
+offset_top = 289.0
+offset_right = 72.0
+offset_bottom = 329.0
+
+[node name="Button2" type="Button" parent="ClearButtonCo,ntainer" unique_id=1992888978]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 27.0
+offset_right = 200.0
+offset_bottom = 80.0
+theme_override_constants/h_separation = 4
+theme_override_font_sizes/font_size = 12
+text = "Clear screen"
+autowrap_mode = 2
