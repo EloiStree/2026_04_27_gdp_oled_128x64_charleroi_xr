@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dqgfnk2sp7ts0"]
+
+[ext_resource type="Script" uid="uid://ck6ppfdofjpd3" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e6_jurgen/e6_screen_build_helloworld.gd" id="1_ys6lc"]
+[ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="2_xggnq"]
+
+[node name="SceneJurgen" type="Node3D" unique_id=46745070]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1356557737]
+transform = Transform3D(1, 0, 0, 0, -0.0199652, 0.9998007, 0, -0.9998007, -0.0199652, 0, 0.5135785, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1029468825]
+
+[node name="Display128x64Lite" parent="." unique_id=1860853132 instance=ExtResource("2_xggnq")]
+
+[node name="E06ScreenBuilderHelloWorld" type="Node" parent="." unique_id=14333901 node_paths=PackedStringArray("screen")]
+script = ExtResource("1_ys6lc")
+screen = NodePath("../Display128x64Lite")
+metadata/_custom_type_script = "uid://ck6ppfdofjpd3"
