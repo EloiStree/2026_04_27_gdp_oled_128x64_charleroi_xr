@@ -9,7 +9,7 @@
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.36286056, 0)
 
 [node name="Display128x64Lite" parent="." unique_id=1860853132 instance=ExtResource("1_ldt2a")]
-transform = Transform3D(0.9934878, -0.11373007, 0.0068751997, 0.11319098, 0.97828096, -0.1736482, 0.0130231455, 0.17329554, 0.9847838, 0, 0, 0)
+transform = Transform3D(0.9999999, 0, 0, 0, 0.9999998, 0, 0, 0, 1.0000001, 0, 0, 0)
 
 [node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2060551592]
 transform = Transform3D(1, 0, 0, 0, -0.70264995, -0.7115357, 0, 0.7115357, -0.70264995, -0.51734924, 0.69378203, 0.3533352)
