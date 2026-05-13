@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bh81u2g7tk0cr" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_128x64_2d_rect_lite.tscn" id="1_y1aso"]
 [ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="2_8uskl"]
-[ext_resource type="Script" uid="uid://b86cxxyu84ps6" path="res://addons/2026_04_27_gdp_oled_128x64/script/ssd_1306_hello_godot_script_lite.gd" id="3_nakep"]
+[ext_resource type="Script" uid="uid://b5xvdx7ldil0q" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/dactylo_game/script/e13_screen_mod_dactylography_game.gd" id="3_y1aso"]
 
 [node name="Demo Hello World 2D 3D Lite" type="Node3D" unique_id=766910947]
 
@@ -57,13 +57,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777771, 0.99884033, 0.5249
 
 [node name="Code" type="Node" parent="." unique_id=1545940022]
 
-[node name="Hello SSD1306 Lite" type="Node" parent="Code" unique_id=909031137]
-script = ExtResource("3_nakep")
-metadata/_custom_type_script = "uid://b86cxxyu84ps6"
+[node name="E13ScreenModDactylographyGame" type="Node" parent="Code" unique_id=882058217 node_paths=PackedStringArray("screen")]
+script = ExtResource("3_y1aso")
+screen = NodePath("../../2D Example/CanvasLayer/DisplaySsd128x64dRectLite")
+metadata/_custom_type_script = "uid://b5xvdx7ldil0q"
 
 [connection signal="button_down" from="2D Example/CanvasLayer/Button X" to="2D Example/CanvasLayer" method="hide"]
-[connection signal="button_down" from="2D Example/CanvasLayer/Button Restart" to="Code/Hello SSD1306 Lite" method="reload_current_scene"]
-[connection signal="on_debug_print_requested" from="Code/Hello SSD1306 Lite" to="2D Example/CanvasLayer/Label Debug Log" method="set_text"]
-[connection signal="on_debug_print_requested" from="Code/Hello SSD1306 Lite" to="3D Example/Label3D Debug Log" method="set_text"]
-[connection signal="on_set_and_draw_array_requested" from="Code/Hello SSD1306 Lite" to="2D Example/CanvasLayer/DisplaySsd128x64dRectLite" method="set_value_with_1d_array_and_draw"]
-[connection signal="on_set_and_draw_array_requested" from="Code/Hello SSD1306 Lite" to="3D Example/Display128x64Lite" method="set_value_with_1d_array_and_draw"]
