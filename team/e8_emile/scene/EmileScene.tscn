@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bfyp41jwou67n"]
+
+[ext_resource type="Script" uid="uid://bxbigtqjw2med" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e8_emile/script/e8_emile.gd" id="1_gpm2u"]
+[ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="2_xmn28"]
+
+[node name="EmileScene" type="Node3D" unique_id=492478917 node_paths=PackedStringArray("screen")]
+script = ExtResource("1_gpm2u")
+screen = NodePath("Display128x64Lite")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1868039075]
+
+[node name="Display128x64Lite" parent="." unique_id=1860853132 instance=ExtResource("2_xmn28")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=2071689545]
+transform = Transform3D(1, 0, 0, 0, -0.0019897409, 0.9999981, 0, -0.9999981, -0.0019897409, 0, 0.23632967, 0)
