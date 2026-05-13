@@ -2,6 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="1_251yo"]
 [ext_resource type="Script" uid="uid://2ta7wrgglwbd" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e3_nicolas/script/e3_screen_builder_hello_world.gd" id="1_b84ha"]
+[ext_resource type="Script" uid="uid://dvgiy0r7hy43x" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e3_nicolas/script/e3_raycast_to_screen_display128x64.gd" id="3_gj441"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gj441"]
+size = Vector3(1, 1, 0.1)
 
 [node name="NicolasScene" type="Node3D" unique_id=472455544 node_paths=PackedStringArray("screen")]
 script = ExtResource("1_b84ha")
@@ -12,6 +16,24 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="Display128x64Lite" parent="." unique_id=1860853132 instance=ExtResource("1_251yo")]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
+
+[node name="Area3D" type="Area3D" parent="Display128x64Lite/SizeAnchor/ScreenQuadDisplay" parent_id_path=PackedInt32Array(1860853132, 1218394644) index="1" unique_id=1359691237]
+transform = Transform3D(1, 0, 0, 0, 1, 4.2632564e-14, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Display128x64Lite/SizeAnchor/ScreenQuadDisplay/Area3D" unique_id=1779966071]
+transform = Transform3D(1, 0, 0, 0, 1, 2.842171e-14, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_gj441")
 
 [node name="Camera3D" type="Camera3D" parent="." unique_id=1878988997]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.3, 0)
+
+[node name="RaycastToScreenDisplay128x64" type="Node3D" parent="." unique_id=833579281 node_paths=PackedStringArray("cam", "raycast")]
+script = ExtResource("3_gj441")
+cam = NodePath("../Camera3D")
+raycast = NodePath("RayCast3D")
+
+[node name="RayCast3D" type="RayCast3D" parent="RaycastToScreenDisplay128x64" unique_id=239315902]
+
+[editable path="Display128x64Lite"]
+[editable path="Display128x64Lite/SizeAnchor/ssd_1306_128x64_display"]
