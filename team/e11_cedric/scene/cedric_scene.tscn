@@ -18,6 +18,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7644446, 0.43581843, 0)
 [node name="E11ScreenBuilderCardinalLine" type="Node" parent="Code" unique_id=1710033337 node_paths=PackedStringArray("screen")]
 script = ExtResource("3_t1n7c")
 screen = NodePath("../../Display128x64Lite")
-le_point = Vector2(58, 32)
-lenght = 20
+Right = false
+Left = false
 metadata/_custom_type_script = "uid://bd7pfh6l6n8mb"
