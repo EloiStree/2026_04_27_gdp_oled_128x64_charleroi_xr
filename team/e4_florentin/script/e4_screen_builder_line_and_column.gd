@@ -1,5 +1,4 @@
 class_name E4ScreenBuilderLineAndColumn
-
 extends Node
 
 static func draw_line(array:Array[bool],line_number:int):

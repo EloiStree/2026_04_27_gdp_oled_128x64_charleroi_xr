@@ -6,7 +6,6 @@ extends Node
 @export var col:int = 0
 @export var line:int = 0
 
-
 func _ready() -> void:
 	array.resize(128*64)
 	
