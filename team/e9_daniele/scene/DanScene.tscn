@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bf1x3hs2f32fb"]
+
+[ext_resource type="Script" uid="uid://deq07e1a68cyl" path="res://addons/2026_04_27_gdp_oled_128x64/script/ssd_1306_node_facade_lite.gd" id="1_nyulf"]
+
+[node name="DanScene" type="Node2D" unique_id=1073204778]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1253658312]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1074308069]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6005443, 0, 0)
+
+[node name="SSD1306NodeFacadeLite" type="Node" parent="." unique_id=1879871965]
+script = ExtResource("1_nyulf")
+metadata/_custom_type_script = "uid://deq07e1a68cyl"
