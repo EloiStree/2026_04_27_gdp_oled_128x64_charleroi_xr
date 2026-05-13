@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cmwp73uvopsuf"]
 
 [ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="1_ei3w4"]
-[ext_resource type="Script" uid="uid://c2vqqgfi3ouww" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e11_cedric/script/e11_screen_builder_hello_world.gd" id="2_flceu"]
+[ext_resource type="Script" uid="uid://bd7pfh6l6n8mb" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e11_cedric/script/e11_screen_builder_cardinal_line.gd" id="3_t1n7c"]
 
 [node name="CedricScene" type="Node3D" unique_id=1359053581]
 
@@ -13,7 +13,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.7644446, 0.43581843, 0)
 
 [node name="Display128x64Lite" parent="." unique_id=1860853132 instance=ExtResource("1_ei3w4")]
 
-[node name="E11ScreenBuilderHelloWorld" type="Node" parent="." unique_id=1464994669 node_paths=PackedStringArray("screen")]
-script = ExtResource("2_flceu")
-screen = NodePath("../Display128x64Lite")
-metadata/_custom_type_script = "uid://c2vqqgfi3ouww"
+[node name="Code" type="Node" parent="." unique_id=2105917241]
+
+[node name="E11ScreenBuilderCardinalLine" type="Node" parent="Code" unique_id=1710033337 node_paths=PackedStringArray("screen")]
+script = ExtResource("3_t1n7c")
+screen = NodePath("../../Display128x64Lite")
+le_point = Vector2(58, 32)
+lenght = 20
+metadata/_custom_type_script = "uid://bd7pfh6l6n8mb"
