@@ -18,3 +18,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0860343, 1.1127198, 0)
 [node name="grid" type="Node" parent="Code" unique_id=1186582403 node_paths=PackedStringArray("screen")]
 script = ExtResource("2_mvrqp")
 screen = NodePath("../../Display128x64Lite")
+array = null
