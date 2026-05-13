@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://dypuq6mcsdcjl"]
+
+[ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="1_ldt2a"]
+[ext_resource type="Script" uid="uid://rkyr4ga287en" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e5_gaetan/script/e5_screen_builder_hello_world.gd" id="2_4plyf"]
+
+[node name="GaetanScene" type="Node3D" unique_id=689877919]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=236581281]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0.36286056, 0)
+
+[node name="Display128x64Lite" parent="." unique_id=1860853132 instance=ExtResource("1_ldt2a")]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=2060551592]
+transform = Transform3D(1, 0, 0, 0, -0.70264995, -0.7115357, 0, 0.7115357, -0.70264995, -0.51734924, 0.69378203, 0.3533352)
+omni_range = 4.264912
+
+[node name="E5ScreenBuilderHelloWorld" type="Node" parent="." unique_id=534601047 node_paths=PackedStringArray("screen")]
+script = ExtResource("2_4plyf")
+screen = NodePath("../Display128x64Lite")
+metadata/_custom_type_script = "uid://rkyr4ga287en"
