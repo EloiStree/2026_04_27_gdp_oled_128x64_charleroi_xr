@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://7wlckqj07be2"]
+
+[ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="1_2daet"]
+[ext_resource type="Script" uid="uid://bmr8k705xnale" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e0_classroom/script/e0_screen_builder_display_hello_world.gd" id="2_82ml5"]
+
+[node name="DemoHelloWorld" type="Node3D" unique_id=1508946463]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1844641809]
+transform = Transform3D(1, 0, 0, 0, 0.013229179, 0.9999125, 0, -0.9999125, 0.013229179, 0, 0.42862248, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=605861053]
+
+[node name="Display128x64Lite" parent="." unique_id=1860853132 instance=ExtResource("1_2daet")]
+
+[node name="Code" type="Node" parent="." unique_id=875572570]
+
+[node name="DisplayHelloWorld" type="Node" parent="Code" unique_id=1189666566 node_paths=PackedStringArray("screen")]
+script = ExtResource("2_82ml5")
+screen = NodePath("../../Display128x64Lite")
