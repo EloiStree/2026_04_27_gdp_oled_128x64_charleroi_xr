@@ -5,7 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://cvvhceqgtyx1d" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_128x_64_quad_lite.tscn" id="3_8vpoc"]
 [ext_resource type="Script" uid="uid://bq8fsmcgcluu2" path="res://addons/2026_04_27_gdp_oled_128x64/script/mod/lite/ssd_1306_mod_lit_run_layer_builder.gd" id="3_074e3"]
 [ext_resource type="Script" uid="uid://bb2gb1kdmju3j" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/screen_builder/print_text_6x8/script/e13_screen_builder_print_6x8_demo.gd" id="4_k42j0"]
+[ext_resource type="Script" uid="uid://d2qqc0cpkf4m8" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/basic/e13_screen_layer_clear.gd" id="5_uonyd"]
 [ext_resource type="Script" uid="uid://bn6y8soslxqtk" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/screen_builder/circle/e13_screen_builder_circle_layer_demo.gd" id="6_8vpoc"]
+[ext_resource type="Script" uid="uid://bbwprsukr5fy6" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/basic/e13_screen_layer_grid_1x1.gd" id="6_hel3s"]
+[ext_resource type="Script" uid="uid://b5xvdx7ldil0q" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/dactylo_game/script/e13_screen_mod_dactylography_game.gd" id="7_wd2io"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_ssg37"]
 
@@ -42,28 +45,38 @@ script = ExtResource("1_dj4wb")
 metadata/_custom_type_script = "uid://bb5opb34houmb"
 
 [node name="QuadDisplay128x64Lite" parent="." unique_id=451418815 instance=ExtResource("3_8vpoc")]
-transform = Transform3D(1, 0, 0, 0, 0.6378542, -0.7701571, 0, 0.7701571, 0.6378542, 0, 0.40790126, -0.53855515)
+transform = Transform3D(1, 0, 0, 0, 0.6378542, -0.7701571, 0, 0.7701571, 0.6378542, 0, 0.10062885, -0.53855515)
 
 [node name="Code" type="Node" parent="." unique_id=1418273322 node_paths=PackedStringArray("screens", "add_scripts_in_node_childrens", "layers")]
 script = ExtResource("3_074e3")
 screens = [NodePath("../XROrigin3D/XRController3D Left/Display128x64Lite"), NodePath("../QuadDisplay128x64Lite")]
+use_await = false
+time_between_refresh = 0.1
 add_scripts_in_node_childrens = NodePath(".")
-layers = [NodePath("Node/E13ScreenBuilderPrint6x8LayerDemo"), NodePath("Node/E13ScreenBuilderCircleLayerDemo")]
+layers = [NodePath("Node/E13ScreenLayerClear"), null, NodePath("Node/E13ScreenBuilderPrint6x8LayerDemo"), NodePath("Node/E13ScreenBuilderCircleLayerDemo"), NodePath("Node/E13ScreenModDactylographyGame")]
 metadata/_custom_type_script = "uid://bq8fsmcgcluu2"
 
 [node name="Node" type="Node" parent="Code" unique_id=391743832]
 
+[node name="E13ScreenLayerClear" type="Node" parent="Code/Node" unique_id=1477561809]
+script = ExtResource("5_uonyd")
+value_to_draw = false
+metadata/_custom_type_script = "uid://d2qqc0cpkf4m8"
+
+[node name="E13ScreenLayerGrid1x1" type="Node" parent="Code/Node" unique_id=529674420]
+script = ExtResource("6_hel3s")
+metadata/_custom_type_script = "uid://bbwprsukr5fy6"
+
 [node name="E13ScreenBuilderPrint6x8LayerDemo" type="Node" parent="Code/Node" unique_id=1603232980]
 script = ExtResource("4_k42j0")
+is_layer_enabled = false
 metadata/_custom_type_script = "uid://bb2gb1kdmju3j"
 
 [node name="E13ScreenBuilderCircleLayerDemo" type="Node" parent="Code/Node" unique_id=385002942]
 script = ExtResource("6_8vpoc")
-is_layer_enabled = null
-title = null
-one_liner = null
-short_description = null
-documentation_url = null
-tag_name = null
-unique_id = null
+is_layer_enabled = false
 metadata/_custom_type_script = "uid://bn6y8soslxqtk"
+
+[node name="E13ScreenModDactylographyGame" type="Node" parent="Code/Node" unique_id=740607316]
+script = ExtResource("7_wd2io")
+metadata/_custom_type_script = "uid://b5xvdx7ldil0q"
