@@ -6,19 +6,14 @@ extends Node
 const SCREEN_WIDTH: int = 128
 const SCREEN_HEIGHT: int = 64
 
-
-
+static func print_text(array:Array[bool], text:String, letter_color:bool=true, use_background:bool=true, top_left_text_corner:Vector2i=Vector2i.ZERO):
+	print_text_6x8_at_lrtd(array, top_left_text_corner,text,letter_color,use_background)
 
 ## Ce code prend un texte et une position et l'affiche sur l'écran
 static func print_text_6x8_at_lrtd(array:Array[bool], top_left_text_corner:Vector2i, text:String, letter_color:bool, use_background:bool):
 	draw_line_characters_6x8_lrtd(array, top_left_text_corner.x, top_left_text_corner.y, text, letter_color, use_background)
 
-
-
-
 #region BITMAP FONT TO TEXT IMAGE 
-
-
 static func draw_line_characters_6x8_lrtd(array: Array[bool], x_left_right: int, y_down_top: int, chars: String, is_on: bool = true,use_background: bool = false):
 	var right_offset: int = 6
 	var down_offset: int = 8

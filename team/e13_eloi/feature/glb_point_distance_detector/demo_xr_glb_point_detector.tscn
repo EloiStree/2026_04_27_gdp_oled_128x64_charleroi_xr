@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://dvljpvqk3shn2"]
+
+[ext_resource type="Script" uid="uid://bb5opb34houmb" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e0_classroom/script/charleroi_xr_basic_setup_open_xr.gd" id="1_dj4wb"]
+[ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="1_ssg37"]
+[ext_resource type="PackedScene" uid="uid://cvvhceqgtyx1d" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_128x_64_quad_lite.tscn" id="3_8vpoc"]
+[ext_resource type="Script" uid="uid://bq8fsmcgcluu2" path="res://addons/2026_04_27_gdp_oled_128x64/script/mod/lite/ssd_1306_mod_lit_run_layer_builder.gd" id="3_074e3"]
+[ext_resource type="Script" uid="uid://bb2gb1kdmju3j" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/screen_builder/print_text_6x8/script/e13_screen_builder_print_6x8_demo.gd" id="4_k42j0"]
+[ext_resource type="Script" uid="uid://bn6y8soslxqtk" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/screen_builder/circle/e13_screen_builder_circle_layer_demo.gd" id="6_8vpoc"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ssg37"]
+
+[node name="DemoXrGlbPointDetector" type="Node3D" unique_id=35350447]
+
+[node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=139204861]
+
+[node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=2050639286]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="XROrigin3D/XRCamera3D" unique_id=1412981601]
+
+[node name="XRController3D Left" type="XRController3D" parent="XROrigin3D" unique_id=1296009684]
+tracker = &"left_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D Left" unique_id=126956613]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+visible = false
+layers = 9
+mesh = SubResource("SphereMesh_ssg37")
+
+[node name="Display128x64Lite" parent="XROrigin3D/XRController3D Left" unique_id=1860853132 instance=ExtResource("1_ssg37")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+
+[node name="XRController3D Right" type="XRController3D" parent="XROrigin3D" unique_id=1127239089]
+tracker = &"right_hand"
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/XRController3D Right" unique_id=1995798200]
+transform = Transform3D(0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, 0, 0, 0)
+layers = 9
+mesh = SubResource("SphereMesh_ssg37")
+
+[node name="CharleroiXrBasicSetupOpenXR" type="Node" parent="." unique_id=1349261044]
+script = ExtResource("1_dj4wb")
+metadata/_custom_type_script = "uid://bb5opb34houmb"
+
+[node name="QuadDisplay128x64Lite" parent="." unique_id=451418815 instance=ExtResource("3_8vpoc")]
+transform = Transform3D(1, 0, 0, 0, 0.6378542, -0.7701571, 0, 0.7701571, 0.6378542, 0, 0.40790126, -0.53855515)
+
+[node name="Code" type="Node" parent="." unique_id=1418273322 node_paths=PackedStringArray("screens", "add_scripts_in_node_childrens", "layers")]
+script = ExtResource("3_074e3")
+screens = [NodePath("../XROrigin3D/XRController3D Left/Display128x64Lite"), NodePath("../QuadDisplay128x64Lite")]
+add_scripts_in_node_childrens = NodePath(".")
+layers = [NodePath("Node/E13ScreenBuilderPrint6x8LayerDemo"), NodePath("Node/E13ScreenBuilderCircleLayerDemo")]
+metadata/_custom_type_script = "uid://bq8fsmcgcluu2"
+
+[node name="Node" type="Node" parent="Code" unique_id=391743832]
+
+[node name="E13ScreenBuilderPrint6x8LayerDemo" type="Node" parent="Code/Node" unique_id=1603232980]
+script = ExtResource("4_k42j0")
+metadata/_custom_type_script = "uid://bb2gb1kdmju3j"
+
+[node name="E13ScreenBuilderCircleLayerDemo" type="Node" parent="Code/Node" unique_id=385002942]
+script = ExtResource("6_8vpoc")
+is_layer_enabled = null
+title = null
+one_liner = null
+short_description = null
+documentation_url = null
+tag_name = null
+unique_id = null
+metadata/_custom_type_script = "uid://bn6y8soslxqtk"
