@@ -1,4 +1,4 @@
-class_name E13ScreenLayerModCodeAbstract
+class_name SSD1306ScreenLayerModCodeAbstract
 extends SSD1306ModLiteLayerWithTagName
 
 signal on_created_node(node_created:Node)
@@ -21,6 +21,8 @@ func append_layer(array_128x64: Array[bool]) -> void:
 
 @export_group("Debug")
 @export var created_node_holding_code:Node
+
+@export var use_3d_node:bool=true
 
 func append_layer(array_128x64: Array[bool]) -> void:
 	if created_node_holding_code and created_node_holding_code.has_method("append_layer"):
@@ -67,11 +69,11 @@ func load_in_godot_code(code:String):
 	## now we need to use it
 	
 	## we need for that a node
-	var node :Node = Node.new()
+	var node :Node =  Node3D.new() if use_3d_node else Node.new()
 	# we have a new node but not yet in the scene
 	node.set_script(script)
 	# he has our code 
-	node.set_process(true)
+	node.set_process(true)	
 	# he now use _process(delta)
 	node.set_physics_process(true)
 	# in case we need it later

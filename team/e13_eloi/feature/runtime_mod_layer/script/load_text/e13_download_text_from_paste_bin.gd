@@ -1,3 +1,4 @@
+class_name E13DownloadTextFromPasteBin
 extends Node
 
 signal text_downloaded(text:String)
@@ -13,9 +14,9 @@ func _ready():
 	add_child(http)
 	http.request_completed.connect(_on_request_completed)
 	if load_at_ready:
-		download()
+		download_and_emit()
 
-func download() -> void:
+func download_and_emit() -> void:
 	var raw_url:String = _to_raw_url(paste_url)
 
 	print("Downloading:", raw_url)

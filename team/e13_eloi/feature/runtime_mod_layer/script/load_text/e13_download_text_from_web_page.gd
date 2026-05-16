@@ -1,3 +1,4 @@
+class_name E13DownloadTextFromWebPage
 extends Node
 
 signal on_text_downloaded(text:String)
