@@ -57,9 +57,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777771, 0.99884033, 0.5249
 
 [node name="Code" type="Node" parent="." unique_id=1545940022]
 
-[node name="E13ScreenModDactylographyGame" type="Node" parent="Code" unique_id=882058217 node_paths=PackedStringArray("screen")]
+[node name="E13ScreenModDactylographyGame" type="Node" parent="Code" unique_id=882058217]
 script = ExtResource("3_y1aso")
-screen = NodePath("../../2D Example/CanvasLayer/DisplaySsd128x64dRectLite")
 metadata/_custom_type_script = "uid://b5xvdx7ldil0q"
 
 [connection signal="button_down" from="2D Example/CanvasLayer/Button X" to="2D Example/CanvasLayer" method="hide"]
