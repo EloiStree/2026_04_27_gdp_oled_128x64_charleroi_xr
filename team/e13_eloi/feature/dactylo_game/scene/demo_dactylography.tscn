@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://bh81u2g7tk0cr" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_128x64_2d_rect_lite.tscn" id="1_y1aso"]
 [ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="2_8uskl"]
-[ext_resource type="Script" uid="uid://b5xvdx7ldil0q" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/dactylo_game/script/e13_screen_mod_dactylography_game.gd" id="3_y1aso"]
+[ext_resource type="Script" uid="uid://bq8fsmcgcluu2" path="res://addons/2026_04_27_gdp_oled_128x64/script/mod/lite/ssd_1306_mod_lit_run_layer_builder.gd" id="3_8uskl"]
+[ext_resource type="PackedScene" uid="uid://b2i8ch2e5b6r8" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/dactylo_game/layer_node/screen_layer_dactylography_game.tscn" id="3_y1aso"]
+[ext_resource type="PackedScene" uid="uid://38f7in6gu2wh" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/dactylo_game/layer_node/e_13_screen_layer_clear.tscn" id="4_nakep"]
 
 [node name="Demo Hello World 2D 3D Lite" type="Node3D" unique_id=766910947]
 
@@ -57,8 +59,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777771, 0.99884033, 0.5249
 
 [node name="Code" type="Node" parent="." unique_id=1545940022]
 
-[node name="E13ScreenModDactylographyGame" type="Node" parent="Code" unique_id=882058217]
-script = ExtResource("3_y1aso")
-metadata/_custom_type_script = "uid://b5xvdx7ldil0q"
+[node name="SSD1306ModLiteRunLayerBuilder" type="Node" parent="Code" unique_id=197152595 node_paths=PackedStringArray("screens", "layers")]
+script = ExtResource("3_8uskl")
+screens = [NodePath("../../2D Example/CanvasLayer/DisplaySsd128x64dRectLite"), NodePath("../../3D Example/Display128x64Lite")]
+layers = [NodePath("E13ScreenLayerClear"), NodePath("Screen Layer Dactylography Game")]
+metadata/_custom_type_script = "uid://bq8fsmcgcluu2"
+
+[node name="E13ScreenLayerClear" parent="Code/SSD1306ModLiteRunLayerBuilder" unique_id=1458758596 instance=ExtResource("4_nakep")]
+
+[node name="Screen Layer Dactylography Game" parent="Code/SSD1306ModLiteRunLayerBuilder" unique_id=886793185 instance=ExtResource("3_y1aso")]
 
 [connection signal="button_down" from="2D Example/CanvasLayer/Button X" to="2D Example/CanvasLayer" method="hide"]

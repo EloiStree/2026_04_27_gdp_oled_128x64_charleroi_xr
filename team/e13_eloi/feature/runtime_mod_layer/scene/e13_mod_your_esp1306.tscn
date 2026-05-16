@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bvhfj50b5eoy0"]
+
+[ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="1_8v8o0"]
+[ext_resource type="Script" uid="uid://bq8fsmcgcluu2" path="res://addons/2026_04_27_gdp_oled_128x64/script/mod/lite/ssd_1306_mod_lit_run_layer_builder.gd" id="2_gdk5r"]
+[ext_resource type="Script" uid="uid://bhvhsni8og87s" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/runtime_mod_layer/script/e13_screen_layer_mod_code_abstract.gd" id="3_gdk5r"]
+[ext_resource type="Script" uid="uid://bvab0xfwwv5eo" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/runtime_mod_layer/script/test/e13_download_text_from_code_share.gd" id="4_t2no1"]
+[ext_resource type="Script" uid="uid://b4vvacuaqwti0" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/runtime_mod_layer/script/test/e13_download_text_from_gist.gd.gd" id="5_sd5o7"]
+
+[node name="E13ModYourEsp1306" type="Node3D" unique_id=1335173719]
+
+[node name="Display128x64Lite" parent="." unique_id=1860853132 instance=ExtResource("1_8v8o0")]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1754238260]
+transform = Transform3D(1, 0, 0, 0, 0.14140233, 0.9899522, 0, -0.9899522, 0.14140233, -0.3661499, 0.5987463, 0.026144052)
+
+[node name="SSD1306ModLiteRunLayerBuilder" type="Node" parent="." unique_id=1921695565 node_paths=PackedStringArray("screens", "layers")]
+script = ExtResource("2_gdk5r")
+screens = [NodePath("../Display128x64Lite")]
+layers = [NodePath("E13ScreenLayerModCodeAbstract")]
+metadata/_custom_type_script = "uid://bq8fsmcgcluu2"
+
+[node name="E13ScreenLayerModCodeAbstract" type="Node" parent="SSD1306ModLiteRunLayerBuilder" unique_id=2097096689 node_paths=PackedStringArray("where_to_create_node")]
+script = ExtResource("3_gdk5r")
+where_to_create_node = NodePath("../../Display128x64Lite")
+metadata/_custom_type_script = "uid://bhvhsni8og87s"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=756807834]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4244995, 0)
+
+[node name="Node" type="Node" parent="." unique_id=2041188935]
+script = ExtResource("4_t2no1")
+paste_url = "https://pastebin.com/mM31mCWU"
+
+[node name="Node2" type="Node" parent="." unique_id=1763263048]
+script = ExtResource("5_sd5o7")
+url = "https://gist.github.com/EloiStree/6d9cbb5241746dd90e0101e3cc4ca8d0"
+load_at_ready = true
+
+[connection signal="text_downloaded" from="Node" to="SSD1306ModLiteRunLayerBuilder/E13ScreenLayerModCodeAbstract" method="load_in_godot_code"]
+[connection signal="on_text_downloaded" from="Node2" to="SSD1306ModLiteRunLayerBuilder/E13ScreenLayerModCodeAbstract" method="load_in_godot_code"]

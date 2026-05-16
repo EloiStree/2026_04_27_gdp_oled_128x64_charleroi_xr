@@ -4,15 +4,11 @@
 [ext_resource type="Script" uid="uid://ihf0hsq51tfy" path="res://addons/2026_04_27_gdp_oled_128x64/script/unstore/ssd_1306_boolean_state_resource.gd" id="2_3josa"]
 [ext_resource type="Script" uid="uid://bq8fsmcgcluu2" path="res://addons/2026_04_27_gdp_oled_128x64/script/mod/lite/ssd_1306_mod_lit_run_layer_builder.gd" id="3_jgg5u"]
 [ext_resource type="Script" uid="uid://bbwprsukr5fy6" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/basic/e13_screen_layer_grid_1x1.gd" id="4_ail57"]
-[ext_resource type="Script" uid="uid://brk7gvkqao23b" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/telecran_game/script/e13_screen_layer_telecran_game.gd" id="5_socgb"]
+[ext_resource type="PackedScene" uid="uid://d2eh5fipmae4o" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/telecran_game/layer_node/e_13_screen_layer_telecran_game.tscn" id="5_jgg5u"]
 
 [sub_resource type="Resource" id="Resource_reh0a"]
 script = ExtResource("2_3josa")
 metadata/_custom_type_script = "uid://ihf0hsq51tfy"
-
-[sub_resource type="Curve" id="Curve_jgg5u"]
-_data = [Vector2(0, 0.2332986), 0.0, 0.0, 0, 0, Vector2(0.11142061, 0.6675366), 1.141978, 1.141978, 0, 0, Vector2(1, 0.98580784), 0.0, 0.0, 0, 0]
-point_count = 3
 
 [node name="E13ScreenLayerTelecran" type="Node3D" unique_id=1780370781]
 
@@ -31,7 +27,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3203125, 0)
 script = ExtResource("3_jgg5u")
 screens = [NodePath("../Display128x64Lite")]
 add_scripts_in_node_childrens = NodePath(".")
-layers = [NodePath("E13ScreenLayerGrid1x1"), NodePath("E13ScreenLayerTelecranGame")]
+layers = [NodePath("E13ScreenLayerGrid1x1"), NodePath("")]
 metadata/_custom_type_script = "uid://bq8fsmcgcluu2"
 
 [node name="E13ScreenLayerGrid1x1" type="Node" parent="SSD1306ModLiteRunLayerBuilder" unique_id=1961551443]
@@ -39,10 +35,7 @@ script = ExtResource("4_ail57")
 is_layer_enabled = false
 metadata/_custom_type_script = "uid://bbwprsukr5fy6"
 
-[node name="E13ScreenLayerTelecranGame" type="Node" parent="SSD1306ModLiteRunLayerBuilder" unique_id=1963475418]
-script = ExtResource("5_socgb")
-curve_value = SubResource("Curve_jgg5u")
-metadata/_custom_type_script = "uid://brk7gvkqao23b"
+[node name="E13ScreenLayerTelecranGame" parent="SSD1306ModLiteRunLayerBuilder" unique_id=2119559756 instance=ExtResource("5_jgg5u")]
 
 [editable path="Display128x64Lite"]
 [editable path="Display128x64Lite/SizeAnchor/ssd_1306_128x64_display"]

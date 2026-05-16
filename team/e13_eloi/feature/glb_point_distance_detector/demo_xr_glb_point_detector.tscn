@@ -8,7 +8,8 @@
 [ext_resource type="Script" uid="uid://d2qqc0cpkf4m8" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/basic/e13_screen_layer_clear.gd" id="5_uonyd"]
 [ext_resource type="Script" uid="uid://bn6y8soslxqtk" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/screen_builder/circle/e13_screen_builder_circle_layer_demo.gd" id="6_8vpoc"]
 [ext_resource type="Script" uid="uid://bbwprsukr5fy6" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/basic/e13_screen_layer_grid_1x1.gd" id="6_hel3s"]
-[ext_resource type="Script" uid="uid://b5xvdx7ldil0q" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/dactylo_game/script/e13_screen_mod_dactylography_game.gd" id="7_wd2io"]
+[ext_resource type="Script" uid="uid://b5xvdx7ldil0q" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/dactylo_game/script/e13_screen_layer_dactylography_game.gd" id="7_wd2io"]
+
 
 [sub_resource type="SphereMesh" id="SphereMesh_ssg37"]
 
