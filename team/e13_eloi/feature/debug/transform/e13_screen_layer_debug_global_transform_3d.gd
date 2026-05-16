@@ -36,20 +36,25 @@ func append_layer(array: Array[bool]) -> void:
 	)
 	
 	E13ScreenBuilderPrint6x8.print_text_6x8_at_lrtd(
-		array, Vector2i(2, 28), "E: " + format_vec3(euler), true, true
+		array, Vector2i(2, 28), "E: " + format_vec3_euler(euler), true, true
 	)
 	
 	E13ScreenBuilderPrint6x8.print_text_6x8_at_lrtd(
-		array, Vector2i(2, 36), "D: " + format_vec3(forward), true, true
+		array, Vector2i(2, 36), "D: " + format_vec3(direction), true, true
 	)
 	
 	E13ScreenBuilderPrint6x8.print_text_6x8_at_lrtd(
-		array, Vector2i(2, 44), "Q:" + str(quaternion), true, true
+		array, Vector2i(2, 44), "Q:" + format_quad(quaternion), true, true
 	)
 	E13ScreenBuilderPrint6x8.print_text_6x8_at_lrtd(
-		array, Vector2i(2, 52), "D:" + format_vec3(direction), true, true
+		array, Vector2i(2, 52), "Info: X Y Z | W", true, true
 	)
 
 
 func format_vec3(v: Vector3) -> String:
-	return "%.1f, %.1f, %.1f" % [v.x, v.y, v.z]
+	return "%.2f, %.2f, %.2f" % [v.x, v.y, v.z]
+func format_vec3_euler(v: Vector3) -> String:
+	return "%.1f, %.1f, %.1f" % [rad_to_deg(v.x), rad_to_deg(v.y), rad_to_deg(v.z)]
+	
+func format_quad(v: Quaternion) -> String:
+	return "%.1f, %.1f, %.1f, %.1f" % [v.x, v.y, v.z, v.w]
