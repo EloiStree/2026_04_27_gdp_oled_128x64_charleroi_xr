@@ -10,47 +10,48 @@ const MAX_CHAR_PER_LINE = 128/6
 const MAX_LINES = 64/8
 
 func append_layer(array_128x64: Array[bool]) -> void:
-	
 	if use_clear_background:
 		array_128x64.fill(false)
-	
-	var text_to_display:String = "XR Inputs"
-	text_to_display += "\nLT: %.2f" % get_trigger_left_value()
-	text_to_display += " RT: %.2f" % get_trigger_right_value()
-	text_to_display += " LG: %.2f" % get_grip_left_value()
-	text_to_display += " RG: %.2f" % get_grip_right_value()
-	text_to_display += "\nLJ: " + compress_vector2_to_string(get_left_joystick_2d_value())
-	text_to_display += "\nRJ: " + compress_vector2_to_string(get_right_joystick_2d_value())
-	text_to_display += "\nLJB: " + ("1" if get_left_joystick_button_press() else "0")
-	text_to_display += " RJB: " + ("1" if get_right_joystick_button_press() else "0")
-	text_to_display += "\nLDX: " + ("1" if get_button_left_down_x_press() else "0")
-	text_to_display += " LUY: " + ("1" if get_button_left_up_y_press() else "0")
-	text_to_display += " RDA: " + ("1" if get_button_right_down_a_press() else "0")
-	text_to_display += " RUB: " + ("1" if get_button_right_up_b_press() else "0")
-	text_to_display += "\nLM: " + ("1" if get_button_menu_left_press() else "0")	
-	E13ScreenBuilderPrint6x8.print_text_6x8_at_lrtd(array_128x64,Vector2i(2,2), text_to_display,true,true)
+	var text_to_display:String = ""
+	text_to_display += "LT:%.2f" % get_trigger_left_value()
+	text_to_display += " RT:%.2f" % get_trigger_right_value()
+	text_to_display += "\nLG:%.2f" % get_grip_left_value()
+	text_to_display += " RG:%.2f" % get_grip_right_value()
+	text_to_display += "\nLJ:" + compress_vector2_to_string(get_left_joystick_2d_value())
+	text_to_display += "\nRJ:" + compress_vector2_to_string(get_right_joystick_2d_value())
+	text_to_display += "\nLJB:" + ("1" if get_left_joystick_button_press() else "0")
+	text_to_display += " RJB:" + ("1" if get_right_joystick_button_press() else "0")
+	text_to_display += "LM:" + ("1" if get_button_menu_left_press() else "0")	
+	text_to_display += "\nLDX:" + ("1" if get_button_left_down_x_press() else "0")
+	text_to_display += " LUY:" + ("1" if get_button_left_up_y_press() else "0")
+	text_to_display += "\nRDA:" + ("1" if get_button_right_down_a_press() else "0")
+	text_to_display += " RUB:" + ("1" if get_button_right_up_b_press() else "0")
+	E13ScreenBuilderPrint6x8.print_text_6x8_at_lrtd(array_128x64,Vector2i(0,0), "XR INPUT                 ",false,true)
+	E13ScreenBuilderPrint6x8.print_text_6x8_at_lrtd(array_128x64,Vector2i(0,8), text_to_display,true,true)
+	draw_vertical_line_up_percentage(array_128x64,124,63,get_trigger_left_value())
+	draw_vertical_line_up_percentage(array_128x64,125,63,get_trigger_right_value())
+	draw_vertical_line_up_percentage(array_128x64,126,63,get_grip_left_value())
+	draw_vertical_line_up_percentage(array_128x64,127,63,get_grip_right_value())
 	if debug_label_2d:
 		debug_label_2d.text= text_to_display
 	if debug_label_3d:
 		debug_label_3d.text= text_to_display
 
-
 func compress_vector2_to_string(v: Vector2) -> String:
 	return "%.1f, %.1f" % [v.x, v.y]
 
-func draw_vertical_line_percentage(array: Array[bool], x: int, y_start: int, percentage: float) -> void:
+func draw_vertical_line_up_percentage(array: Array[bool], x: int, y_start: int, percentage: float) -> void:
 	var pixel_count = int(percentage * 127)
-	draw_vertical_line(array, x, y_start, pixel_count)
-
-func draw_vertical_line(array: Array[bool], x: int, y_start: int, pixel_count: int) -> void:
+	draw_vertical_line_up(array, x, y_start, pixel_count)
+	
+func draw_vertical_line_up(array: Array[bool], x: int, y_start: int, pixel_count: int) -> void:
 	for i in range(pixel_count):
-		var y = y_start + i
-		if y >= 64:
+		var y = y_start - i
+		if y >= 64 or y<0:
 			break
 		var index = y * 128 + x
 		if index < array.size():
 			array[index] = true
-
 
 @export_group("Found")
 @export var xr_origin: XROrigin3D
@@ -100,7 +101,6 @@ func find_xr_elements_in_nodes(nodes: Array[Node]) -> void:
 					xr_right_controller = controller
 		if xr_origin and xr_camera and xr_left_controller and xr_right_controller:
 			break
-			
 			
 func get_button_left_down_x_press() -> bool:
 	if not xr_left_controller: return false
