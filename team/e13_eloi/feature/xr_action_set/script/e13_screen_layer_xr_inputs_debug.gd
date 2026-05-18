@@ -122,7 +122,6 @@ func get_button_menu_left_press() -> bool:
 	if not xr_left_controller: return false
 	return xr_left_controller.is_button_pressed("menu_button")
 	
-	
 func get_left_joystick_2d_value() -> Vector2:
 	if not xr_left_controller:
 		return Vector2.ZERO
