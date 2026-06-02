@@ -62,7 +62,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.777771, 0.99884033, 0.5249
 [node name="SSD1306ModLiteRunLayerBuilder" type="Node" parent="Code" unique_id=197152595 node_paths=PackedStringArray("screens", "layers")]
 script = ExtResource("3_8uskl")
 screens = [NodePath("../../2D Example/CanvasLayer/DisplaySsd128x64dRectLite/Code/Facade Lite"), NodePath("../../3D Example/Display128x64Lite/Code/Facade Lite")]
-layers = [NodePath("E13ScreenLayerClear"), NodePath("Screen Layer Dactylography Game")]
+layers = [NodePath("E13ScreenLayerClear"), null]
 metadata/_custom_type_script = "uid://bq8fsmcgcluu2"
 
 [node name="E13ScreenLayerClear" parent="Code/SSD1306ModLiteRunLayerBuilder" unique_id=1458758596 instance=ExtResource("4_nakep")]
