@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bb5opb34houmb" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e0_classroom/script/charleroi_xr_basic_setup_open_xr.gd" id="1_dj4wb"]
 [ext_resource type="PackedScene" uid="uid://dcb1i4wbf2wyo" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_1306_128x64_3d_lite.tscn" id="1_ssg37"]
-[ext_resource type="PackedScene" uid="uid://cvvhceqgtyx1d" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_128x_64_quad_lite.tscn" id="3_8vpoc"]
+[ext_resource type="PackedScene" uid="uid://cvvhceqgtyx1d" path="res://addons/2026_04_27_gdp_oled_128x64/scene/element/display_ssd_128x64_quad_lite.tscn" id="3_8vpoc"]
 [ext_resource type="Script" uid="uid://bq8fsmcgcluu2" path="res://addons/2026_04_27_gdp_oled_128x64/script/mod/lite/ssd_1306_mod_lit_run_layer_builder.gd" id="3_074e3"]
 [ext_resource type="Script" uid="uid://bb2gb1kdmju3j" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/screen_builder/print_text_6x8/script/e13_screen_builder_print_6x8_demo.gd" id="4_k42j0"]
 [ext_resource type="Script" uid="uid://d2qqc0cpkf4m8" path="res://addons/2026_04_27_gdp_oled_128x64_charleroi_xr/team/e13_eloi/feature/basic/layer_node/e13_screen_layer_clear.gd" id="5_uonyd"]
